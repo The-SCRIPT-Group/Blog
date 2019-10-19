@@ -4,9 +4,28 @@ Those who have push access can add new content (basic rule).
 
 &nbsp;
 
+#### Initial configuration (First Time)
+
+Go to [https://github.com/The-SCRIPT-Group/Blog](https://github.com/The-SCRIPT-Group/Blog) 
+
+Choose the 'Fork' button on the right, to fork it to your account. Once that's done:
+
+Click the **Clone or Download** green button on the right, copy the link to clipboard, go to your terminal and clone it to your PC by:
+
+```bash
+$ git clone https://github.com/your-profile/Blog.git
+$ git remote add origin https://github.com/the-script-group/blog.git
+```
+
+*Note that 'your-profile' means your username on github, please don't blindly copy.*
+
+
+
+#### More configuration (Needed every time)
+
 #### Setting up environment
 
-We need *ruby*, *gem* and *ruby-dev* packages (On Ubuntu atleast, please search for your system). Also ensure you have *git* and *hub* (from hub.github.com) installed
+We need *ruby*, *gem* and *ruby-dev* packages (On Ubuntu atleast, please search for your system). Also ensure you have *git* installed
 
 To check ruby version, do:
 
