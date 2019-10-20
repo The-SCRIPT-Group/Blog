@@ -1,6 +1,6 @@
 # TSG Blog Repository
 
-Those who have push access can add new content (basic rule).
+Those who have push access can add new content directly (I assume you know git push).
 
 &nbsp;
 
@@ -8,24 +8,28 @@ Those who have push access can add new content (basic rule).
 
 Go to [https://github.com/The-SCRIPT-Group/Blog](https://github.com/The-SCRIPT-Group/Blog) 
 
-Choose the 'Fork' button on the right, to fork it to your account. Once that's done:
+Choose the 'Fork' button on the right, to fork it to your account. 
+
+&nbsp;
+
+Once that's done:
+
+Go to your account ke repos, you'll find 'Blog'. Go to that.
 
 Click the **Clone or Download** green button on the right, copy the link to clipboard, go to your terminal and clone it to your PC by:
 
 ```bash
-$ git clone https://github.com/your-profile/Blog.git
-$ git remote add origin https://github.com/the-script-group/blog.git
+$ git clone CTRL+SHIFT+V
+$ git remote add tsg https://github.com/the-script-group/blog.git
 ```
 
 *Note that 'your-profile' means your username on github, please don't blindly copy.*
 
 
 
-#### More configuration (Needed every time)
-
 #### Setting up environment
 
-We need *ruby*, *gem* and *ruby-dev* packages (On Ubuntu atleast, please search for your system). Also ensure you have *git* installed
+We need *ruby*, *gem* and *ruby-dev* packages (On Ubuntu atleast, please search for your system). Also ensure you have *git* installed. Also download Typora from [https://www.typora.io/](https://www.typora.io/)
 
 To check ruby version, do:
 
@@ -57,23 +61,39 @@ $ jekyll -v
 
 &nbsp;
 
+These steps are for first-time setup only.
+
+------
+
+&nbsp;
+
+#### More steps (Needed every time)
+
+If you did the above the first time successfully (DRC dude), continue with these:
+
+In your terminal, do these *to fetch latest changes from main repo (mandatory)*:
+
+```bash
+git fetch tsg gh-pages
+git reset --hard tsg/gh-pages
+git clean -fdx
+```
+
+ALWAYS DO THIS BEFORE EDITING, ELSE YOUR CHANGES WILL GET OVERWRITTEN!
+
+&nbsp;
+
 ------
 
 &nbsp;
 
 #### Working on this blog
 
-Do:
-
-```bash
-$ git clone https://github.com/The-SCRIPT-Group/Blog.git
-```
-
-Open the **Blog** folder on your system, in VSCode or any  other editor with folder and terminal support (makes your job easier, trust me. Always trust the person who makes the documentation).
+Open the **Blog** folder on your system which you cloned, in VSCode or any  other editor with folder and terminal support (makes your job easier, trust me. Always trust the person who makes the documentation).
 
 &nbsp;
 
-Once the folder is open, start the terminal in **Blog** and do:
+Once the folder is open, start your terminal inside **Blog** folder and do:
 
 ```bash
 Blog$ bundle exec jekyll serve 
@@ -98,9 +118,9 @@ So, we have our blog running on our system. Cool.
 
 Go to _posts, and make a new file in the format:
 
-***YYYY-MM-DD-NameOfPost.markdown*** and open in Typora (Markdown editor, please download)
+***YYYY-MM-DD-NameOfPost.markdown*** and open in Typora.
 
-At the top of the file, select Paragraph -> YAML Front Matter and put the following:
+At the top of the file, select Paragraph -> YAML Front Matter and put the following compulsorily:
 
 layout: post
 
@@ -137,6 +157,20 @@ $ git commit -m "Describe the post in short"
 ```bash
 $ git push origin gh-pages
 ```
+
+This'll make changes to your forked repo, not the main TSG one. To do that, do the following:
+
+1. Go to [https://github.com/the-script-group/blog](https://github.com/the-script-group/blog), click 'New Pull Request'
+
+2. Click the 'compare across forks' button on the right
+
+3. On the right section, there's 'head repository' dropdown. Choose **your Blog repo** from the list. Keep the rest same.
+
+4. Click Create Pull Request, on the next page, add some comment, and click Create Pull Request
+
+5. Wait for your changes to get merged. Else just spam Akhil or Ritom or Aniket 
+
+   &nbsp;
 
 ------
 
